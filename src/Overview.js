@@ -22,8 +22,8 @@ class Overview extends Component {
   };
 
   render() {
-    let try2 = this.state.items;
-    const try3 = try2.map((item) => <li>{item}</li>);
+    let myArray = this.state.items;
+    const arrayList = myArray.map((item, index) => <li key={index}>{item}</li>);
 
     return (
       <div>
@@ -36,7 +36,7 @@ class Overview extends Component {
         <button type="submit" onClick={this.handleItems}>
           Add
         </button>
-        <ul>{try3}</ul>
+        <ul>{arrayList}</ul>
       </div>
     );
   }
