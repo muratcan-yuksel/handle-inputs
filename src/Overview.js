@@ -12,13 +12,13 @@ class Overview extends Component {
     this.handleItems = this.handleItems.bind(this);
   }
   handleChange = (event) => {
-    this.setState({ value: event.target.value });
+    this.setState({ input: event.target.value });
   };
   handleItems = (event) => {
     this.setState({
-      items: this.state.items.push(this.state.value),
+      items: [...this.state.items, this.state.input],
     });
-    console.log(this.state.value);
+    console.log(this.state.input);
   };
 
   render() {
