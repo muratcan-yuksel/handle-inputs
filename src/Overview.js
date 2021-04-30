@@ -36,9 +36,7 @@ class Overview extends Component {
 
   render() {
     let myArray = this.state.items;
-    const arrayList = myArray.map((item) => (
-      <li key={item.id}>{item.task} </li>
-    ));
+    const arrayList = myArray.map((item) => <li key={item.id}>{item.task}</li>);
 
     return (
       <div>
