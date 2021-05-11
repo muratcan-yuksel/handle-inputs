@@ -35,7 +35,13 @@ class Overview extends Component {
   };
 
   handleDelete = (id, e) => {
-    console.log("id", id, e.target);
+    let filtered = this.state.items.filter(function (el) {
+      return el != id;
+    });
+    console.log(filtered);
+    this.setState({
+      items: filtered,
+    });
   };
 
   render() {
