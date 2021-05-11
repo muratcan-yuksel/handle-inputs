@@ -34,9 +34,20 @@ class Overview extends Component {
     console.log(this.state.input);
   };
 
+  handleDelete = (id, e) => {
+    console.log("id", id, e.target);
+  };
+
   render() {
     let myArray = this.state.items;
-    const arrayList = myArray.map((item) => <li key={item.id}>{item.task}</li>);
+    const arrayList = myArray.map((item, index) => (
+      <div key={item.id}>
+        <li> {index + 1 + " " + item.task}</li>
+        <button onClick={this.handleDelete.bind(this, item)}>
+          Delete item
+        </button>
+      </div>
+    ));
 
     return (
       <div>
